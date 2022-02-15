@@ -14,6 +14,10 @@ for dll in dlls:
    ee = [e.name for e in pe.DIRECTORY_ENTRY_EXPORT.symbols if e.name is not None]
    EXPORTS += ee
 
+for dll in dlls:
+    dll_name = dll.split('/')[1]
+    EXPORTS.append(dll_name)
+
 for e in EXPORTS:
     checksum = hex(zlib.crc32(e) % (1<<32))
     export_crc32[checksum] = e
