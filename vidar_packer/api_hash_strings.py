@@ -1,5 +1,6 @@
 apis = ["GetModuleFileNameW", "ExitProcess", "CreateProcessW", "GetThreadContext", "ReadProcessMemory", "CloseHandle", "Wow64SetThreadContext", "GetCommandLineW", "TerminateProcess"]
 
+# seed value could be different in different routines
 for api in apis:
     seed = 0x2326
     for c in api:
